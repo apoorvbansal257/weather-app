@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#card1").flip({
+            trigger: 'hover'
+            });
+        });
+
+        $(function(){
+            $("#card2").flip({
+            trigger: 'hover'
+            });
+        });
+
+        $(function(){
+            $("#card3").flip({
+            trigger: 'hover'
+            });
+        });
+
+        $(function(){
+            $("#card4").flip({
+            trigger: 'hover'
+            });
+        });
+
+        $(function(){
+            $("#card5").flip({
+            trigger: 'hover'
+            });
+        });
+
+        $(function(){
+            $("#card6").flip({
+            trigger: 'hover'
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-text">
+            <li id="logo" class="nav-item"><img src="logo.png" height="70"></li>
+            <li class="nav-item"><button type="button" class="btn"><a href="/">HOME</a></button></li>
+            <!--<li class="nav-item"><button type="button" class="btn"><a href="about.html">ABOUT</a></button></li>-->
+        </ul>
+    </div>
+
+    <br><br><br>
+
+    <form action="/" method="get">
+    <center>Enter the Location &nbsp; : &nbsp; <input name="location" placeholder="Location Name"></center>
+
+    <br>
+
+    <center><input type="submit" value="Search location"></center>
+    </form>
+
+    <br><br>
+
+    
+    <div class="row">
+        <div id="card1">
+            <div class="front">
+                <div class="parameter">Temperature</div>
+            </div>
+            <div class="back">
+                <div class="parameter">
+                    <% if(weather){ %>
+                        <p><%= weather.temp %></p>
+                      <% } %>
+                      <% if(error){ %>
+                        <p><%= error %></p>
+                      <% } %>
+                </div>
+            </div>
+        </div>
+        
+        <div id="card2">
+            <div class="front">
+                <div class="parameter">Pressure</div>
+            </div>
+            <div class="back">
+                <div class="parameter">
+                    <% if(weather !== null){ %>
+                        <p><%= weather.pres %></p>
+                    <% } %>
+                    <% if(error !== null){ %>
+                        <p><%= error %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        
+        <div id="card3">
+            <div class="front">
+                <div class="parameter">Humidity</div>
+            </div>
+            <div class="back">
+                <div class="parameter">
+                    <% if(weather !== null){ %>
+                        <p><%= weather.hum %></p>
+                    <% } %>
+                    <% if(error !== null){ %>
+                        <p><%= error %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="card4">
+            <div class="front">
+                <div class="parameter">Wind Speed</div>
+            </div>
+            <div class="back">
+                <div class="parameter">
+                    <% if(weather !== null){ %>
+                        <p><%= weather.winsp %></p>
+                    <% } %>
+                    <% if(error !== null){ %>
+                        <p><%= error %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+       
+        <div id="card5">
+            <div class="front">
+                <div class="parameter">Cloud Cover</div>
+            </div>
+            <div class="back">
+                <div class="parameter">
+                    <% if(weather !== null){ %>
+                        <p><%= weather.cloud %></p>
+                    <% } %>
+                    <% if(error !== null){ %>
+                        <p><%= error %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+       
+        <div id="card6">
+            <div class="front">
+                <div class="parameter">Rain</div>
+            </div>
+            <div class="back">
+                <div class="parameter">
+                        <% if(weather !== null){ %>
+                            <p><%= weather.rain %></p>
+                        <% } %>
+                        <% if(error !== null){ %>
+                            <p><%= error %></p>
+                        <% } %>
+                </div>
+            </div>
+              </div>
+    </div>
+
+    <br><br><br>
+
+    <!--<div class="other-info">
+        <p class="more">MORE</p>
+        <ul class="mo">
+            <li class="air-qual">Air Quality</li>
+            <li class="alerts">Alerts</li>
+        </ul>
+    </div>-->
+
+
+</body>
+</html>
